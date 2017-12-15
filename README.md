@@ -29,21 +29,21 @@ Here's an example case:
 
 |Names|a|b|c|d|
 |----------|--------|----------|---------|----------|
-|   Weight|   $300|   $250|   $400|   $450|
-|Start/End |9:00-13:00|11:00-14:00:|16:00-18:00|15:00-21:00|
+|   **Weight**|   **$300**|   **$250**|   **$400**|   **$450**|
+|**Start/End** |**9:00-13:00**|**11:00-14:00**|**16:00-18:00**|**15:00-21:00**|
 
 In this example, activities a, b and and c, d overlap. That's why the algorithm will choose 2 activities which generate the highest profit - a and d - which will give you a total of $750.
 
-**The input** of this algorithm is a list of activities with their names, start and finish times, and weights:   
-
-meetings = [activity("a", 9, 13, 300), activity("b", 11, 14, 250), activity("c", 16, 18, 400), activity("d",15, 21, 450)]   
-
+**The input** of this algorithm is a list of activities with their names, start and finish times, and weights in any order:   
+```python
+meetings = [activity("b", 11, 14, 250), activity("a", 9, 13, 300), activity("c", 16, 18, 400), activity("d",15, 21, 450)]   
+```
 To **run** the algorithm, you should simply call the function "actselectw":  
-
+```python
 print actselectw(meetings)  
-
+```
 **The output** is the maximum weight possible for this set of activities and the activities which have been selected by the algorithm.
-
+```python
 Max weight is 750. You should pick activities ['a', 'd'].  
-
+```
 A link to the GitHub repository: https://github.com/ritakurban/actselectw          
