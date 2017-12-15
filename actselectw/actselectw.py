@@ -1,6 +1,5 @@
 class activity:
-    """Create a class to define possible activities """
-
+    """Create a class to define possible activities. """
     def __init__(self, name, start, finish, weight):
         self.name = name
         self.start = start
@@ -9,7 +8,7 @@ class activity:
 
 
 def fin(activity):
-    """Return the end time of the activity """
+    """Return the end time of the activity. """
     return activity.finish
 
 
@@ -36,12 +35,12 @@ def actselectw(act):
     seq = 0
     # Find the length of the list.
     length = len(activity)
-    #Create a table of max weights.
+    # Create a table of max weights.
     table = [0 for i in range(length)]
-    #Assign the first activity to the first cell of the table.
+    # Assign the first activity to the first cell of the table.
     table[0] = activity[0].weight
     parent = [1]
-    #Dynamic programming part to calculate the highest weight.
+    # Dynamic programming part to calculate the highest weight.
     for i in range(1, length):
         weights = activity[i].weight
         prev = search(activity, i)
@@ -54,7 +53,7 @@ def actselectw(act):
             table[i] = table[i - 1]
             parent.append(0)
 
-    #Find the sequence of activities.
+    # Find the sequence of activities.
     seq = []
     temp = 0
     i = len(parent) - 1
